@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task3</title>
+
+</head>
+<body>
+    
+     <canvas id="myCanvas" style="border:2px solid rgb(91, 0, 211)"></canvas> 
+        
+    </canvas> 
+
+        <script>
+
+        var   mycan = document.getElementById('myCanvas')
+        var   ctx = mycan.getContext("2d");
+
+        mycan.width = 600;
+        mycan.height = 600;
+        let x = 0;
+        let y = 0;
+        let xx = 1;
+        let yy = 1;
+
+        function drawNewLine (){
+        ctx.beginPath();
+        ctx.moveTo(0,0)
+        ctx.lineTo(x,y)            
+        ctx.lineWidth= 10;
+        ctx.strokeStyle='pink'; 
+        ctx.stroke()      
+        x += xx;
+        y += yy;        
+    if (x > mycan.width || y > mycan.height) {
+      alert("New Line has been drawn");
+    } else {
+      requestAnimationFrame(drawNewLine);
+    }
+    }
+    drawNewLine()
+
+        </script>
+</body>
+</html>

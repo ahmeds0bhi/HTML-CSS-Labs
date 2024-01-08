@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <label>Red</label>
+    <input type="range" id="red" min="0" max="255" value="0"> 
+    <br>
+
+    <label>Green</label>
+    <input type="range" id="green" min="0" max="255" value="0"> 
+    <br>
+    
+    <label>Blue</label>
+    <input type="range" id="blue" min="0" max="255" value="0"> 
+
+    <p id = "paragraph">Hello I am a web devloper</p>
+
+    <script>
+        
+        var redBar = document.getElementById('red');
+        var greenBar = document.getElementById('green');
+        var blueBar = document.getElementById('blue');
+        var paragraph = document.getElementById('paragraph')
+
+        redBar.addEventListener( 'input', function(){
+            updateColor()
+        })
+
+        greenBar.addEventListener( 'input', function(){
+            updateColor()
+        })
+
+        blueBar.addEventListener( 'input', function(){
+            updateColor()
+        })
+ 
+        function updateColor()
+        {
+            let redValue = redBar.value;
+            let greenValue = greenBar.value;
+            let blueValue = blueBar.value
+            let paragarphColor = ` rgb(${redValue} , ${greenValue} , ${blueValue})`
+            paragraph.style.color = paragarphColor;
+        }
+
+    </script>
+
+</body>
+</html>
