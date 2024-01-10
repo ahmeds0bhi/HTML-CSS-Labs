@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"> 
+</head>
+<body>
+    <div class="container w-25 h-50" >
+        <h4>Press on the following buttons to know the curretn location</h4>
+        <button id = "locationBtn" class="btn btn-dark form-control p-3 m-2" style="margin: auto;"> current location</button>
+        <button id = "clearWatchBtn" class="btn btn-success form-control p-3 m-2" style="margin: auto;"> clear location</button>
+    </div>
+
+    
+
+    
+
+    <script>
+
+        var locationBtn = document.getElementById('locationBtn');
+        var clearWatchBtn = document.getElementById('clearWatchBtn');
+        var locationId;
+
+        locationBtn.addEventListener( 'click', function(){
+            mylocation();
+        })
+
+       function mylocation(){
+        var locationId =  navigator.geolocation.watchPosition (myCordinates)
+       } 
+
+        function myCordinates (currentCordinates){
+            var latitude = currentCordinates.coords.latitude;
+            var longitude = currentCordinates.coords.longitude;
+            console.log(currentCordinates);
+            window.open(`http://maps.google.com/maps?q=' + ${latitude} + ',+' + ${longitude}` , "_blank" , "width=500,height=500")
+            }
+        
+        clearWatchBtn.addEventListener( 'click', function(){
+            clearWatch()
+        })
+        function clearWatch (){
+            navigator.geolocation.clearWatch(locationId)
+        }
+
+    </script>
+
+</body>
+</html>

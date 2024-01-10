@@ -1,0 +1,63 @@
+h1 {
+    text-align: center;
+    color: tomato;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn button {
+    width:50%;
+    padding: 10px;
+}
+
+label{
+    display: block;
+    margin: 15px 0px;
+    color: brown;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input{
+    width:100%;
+    padding: 15px 0px;
+    border: 2px solid rgb(149, 10, 139);
+}
+
+input::placeholder{
+    padding-left: 10px;
+}
+
+input:focus{
+    outline:none;
+    border: 2px solid rgb(3, 87, 165);
+}
+
+input:invalid:not(:focus):not(:placeholder-shown){
+    outline:none;
+    border: 2px solid rgb(240, 1, 1);
+}
+
+input:valid{
+    outline:none;
+    border: 2px solid rgb(1, 151, 38);
+}
+
+form{
+    display: block !important;
+    width: 50%;
+    margin: auto;
+}
+
+section{
+    width: 100%;
+}
